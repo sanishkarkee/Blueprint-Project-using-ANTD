@@ -7,6 +7,8 @@ import {
   Form,
   Input,
   Row,
+  Select,
+  Table,
 } from 'antd';
 import React from 'react';
 import { FormWrapper } from './FormStyles';
@@ -20,6 +22,39 @@ const onFinish = (values) => {
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
+
+const dataSource = [
+  {
+    key: '1',
+    lowerbound: 100000,
+    percentage: 32,
+    maritialstatus: 'married',
+  },
+  {
+    key: '2',
+    lowerbound: 200000,
+    percentage: 42,
+    maritialstatus: 'unmarried',
+  },
+];
+
+const columns = [
+  {
+    title: 'Lower Bound',
+    dataIndex: 'lowerbound',
+    key: 'lowerbound',
+  },
+  {
+    title: 'Percentage',
+    dataIndex: 'percentage',
+    key: 'percentage',
+  },
+  {
+    title: 'Maritial Status',
+    dataIndex: 'maritialstatus',
+    key: 'maritialstatus',
+  },
+];
 
 const FormCompo = () => {
   const onChange = (key) => {
@@ -119,31 +154,13 @@ const FormCompo = () => {
           <Panel header='This is panel header 2' key='2'>
             <Row justify={'center'}>
               <Col span={16}>
-                <Form.Item
-                  label='Max SSF Limit'
-                  name='ssflimit'
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input SSF!',
-                    },
-                  ]}
-                >
+                <Form.Item label='Max SSF Limit' name='ssflimit'>
                   <Input />
                 </Form.Item>
               </Col>
 
               <Col span={16}>
-                <Form.Item
-                  label='Max CIT Limit'
-                  name='citlimit'
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input CIT!',
-                    },
-                  ]}
-                >
+                <Form.Item label='Max CIT Limit' name='citlimit'>
                   <Input />
                 </Form.Item>
               </Col>
@@ -152,28 +169,13 @@ const FormCompo = () => {
                 <Form.Item
                   label='Max Retirement Fund'
                   name='retirementfund'
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input Retirement Fund!',
-                    },
-                  ]}
                 >
                   <Input />
                 </Form.Item>
               </Col>
 
               <Col span={16}>
-                <Form.Item
-                  label='Max PF Limit'
-                  name='pflimit'
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input PF Fund!',
-                    },
-                  ]}
-                >
+                <Form.Item label='Max PF Limit' name='pflimit'>
                   <Input />
                 </Form.Item>
               </Col>
@@ -182,12 +184,6 @@ const FormCompo = () => {
                 <Form.Item
                   label='Life Insurance'
                   name='lifeinsurance'
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input Life Insurance!',
-                    },
-                  ]}
                 >
                   <Input />
                 </Form.Item>
@@ -197,12 +193,6 @@ const FormCompo = () => {
                 <Form.Item
                   label='Medical Insurance'
                   name='medicalinsurance'
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input Medical Insurance!',
-                    },
-                  ]}
                 >
                   <Input />
                 </Form.Item>
@@ -212,12 +202,6 @@ const FormCompo = () => {
                 <Form.Item
                   label='House Insurance'
                   name='houseinsurance'
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input House Insurance!',
-                    },
-                  ]}
                 >
                   <Input />
                 </Form.Item>
@@ -225,7 +209,33 @@ const FormCompo = () => {
             </Row>
           </Panel>
           <Panel header='This is panel header 3' key='3'>
-            <p>This is dummy text 2</p>
+            <Row justify={'center'}>
+              <Col span={16}>
+                <Form.Item label='Lower Bound' name='lower bound'>
+                  <Input />
+                </Form.Item>
+              </Col>
+
+              <Col span={12}>
+                <Form.Item label='Percentage' name='percentage'>
+                  <Input />
+                </Form.Item>
+              </Col>
+
+              <Col span={12}>
+                <Form.Item label='Maritial Status'>
+                  <Select>
+                    <Select.Option value='married'>
+                      Married
+                    </Select.Option>
+                    <Select.Option value='unmarried'>
+                      Unmarried
+                    </Select.Option>
+                  </Select>
+                </Form.Item>
+              </Col>
+            </Row>
+            <Table dataSource={dataSource} columns={columns} />;
           </Panel>
         </Collapse>
 
