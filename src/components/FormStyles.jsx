@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const FormWrapper = styled.div`
-  ${
-    '' /* --------------------------( GLOBAL )-------------------------------- */
-  }
   label {
     font-weight: 500;
   }
@@ -14,21 +11,8 @@ export const FormWrapper = styled.div`
     width: 100%;
   }
 
-  ${
-    '' /* ----------------------------( FOR PANEL 1 )------------------------------- */
-  }
-
-  .ant-collapse-content-box {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   .ant-form {
     border: 1px solid gray;
-  }
-  .ant-form-item {
-    width: 50%;
-    margin-bottom: 14px;
   }
 
   .ant-collapse {
@@ -57,11 +41,6 @@ export const FormWrapper = styled.div`
     border-bottom: 1px solid gray;
   }
 
-  ${
-    '' /* ------------------------( FOR PANEL 2 )-------------------------- */
-  }
-
-  ${'' /* ------ (Custom Submit Button )-------- */}
   .ant-form-item.customSubmit-Btn {
     width: 100%;
     padding: 12px;
