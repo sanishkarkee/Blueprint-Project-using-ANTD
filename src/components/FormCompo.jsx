@@ -8,6 +8,7 @@ import {
   Input,
   Row,
   Select,
+  Space,
   Table,
 } from 'antd';
 import React from 'react';
@@ -86,7 +87,7 @@ const FormCompo = () => {
           expandIconPosition='end'
         >
           <Panel
-            header='This is panel header 1'
+            header='Fiscal Year Setup'
             key='1'
             collapsible='disabled'
             showArrow={false}
@@ -151,7 +152,7 @@ const FormCompo = () => {
               </Col>
             </Row>
           </Panel>
-          <Panel header='This is panel header 2' key='2'>
+          <Panel header='Tax Deduction Configuration' key='2'>
             <Row justify={'center'}>
               <Col span={16}>
                 <Form.Item label='Max SSF Limit' name='ssflimit'>
@@ -208,7 +209,7 @@ const FormCompo = () => {
               </Col>
             </Row>
           </Panel>
-          <Panel header='This is panel header 3' key='3'>
+          <Panel header='Tax Ranges Configuration' key='3'>
             <Row justify={'center'}>
               <Col span={16}>
                 <Form.Item label='Lower Bound' name='lower bound'>
@@ -233,6 +234,17 @@ const FormCompo = () => {
                     </Select.Option>
                   </Select>
                 </Form.Item>
+              </Col>
+
+              <Col span={24}>
+                <Space wrap>
+                  <Button
+                    type='primary'
+                    className='add-table-data-btn'
+                  >
+                    Add
+                  </Button>
+                </Space>
               </Col>
             </Row>
             <Table dataSource={dataSource} columns={columns} />;

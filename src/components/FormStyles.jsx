@@ -47,4 +47,8 @@ export const FormWrapper = styled.div`
     margin: 0;
     text-align: right;
   }
+
+  .add-table-data-btn {
+    margin-block: 10px;
+  }
 `;
